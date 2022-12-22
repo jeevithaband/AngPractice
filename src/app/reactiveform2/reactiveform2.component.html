@@ -1,0 +1,58 @@
+<div style="width: 50%;margin: auto" [formGroup]="registrationForm">
+    <h1 class="text-center">Registration Form</h1>
+    <div>
+        <div class="form-group mt-2">
+            <label class="form-label" for="">Name*</label>
+            <input class="form-control" required formControlName="name" type="text" placeholder="Enter Name">
+            <div class="error" *ngIf="!registerFormErrors.name.pristine">
+                <label for="" *ngIf="registerFormErrors.name.errors?.required">Name is required</label>
+                <label for="" *ngIf="registerFormErrors.name.errors?.minlength">Name should be min 3 characters</label>
+                <label for="" *ngIf="registerFormErrors.name.errors?.maxlength">Name should be max 10 characters</label>
+            </div>
+        </div>  
+        <div class="form-group mt-2">
+            <label class="form-label" for="">Email*</label>
+            <input class="form-control" required formControlName="email" type="text" placeholder="Enter Email">
+            <div class="error" *ngIf="!registerFormErrors.email.pristine">
+                <label for="" *ngIf="registerFormErrors.email.errors?.required">**Email is required**</label>
+                <label for="" *ngIf="registerFormErrors.email.errors?.email">**Email is not valid**</label>
+
+            </div>
+
+        </div>
+        <div class="form-group mt-2">
+            <label class="form-label" for="">Password*</label>
+            <input class="form-control" formControlName="password" type="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group mt-2">
+            <label class="form-label" for="">Gender</label>
+            <br />
+            <input class="form-check-input"  value="Male" formControlName="gender" name="gender" type="radio"> Male
+            <input class="form-check-input"  value="Female" formControlName="gender" name="gender" type="radio"> Female
+        </div>
+        <div class="form-group mt-2">
+            <label class="form-label" for="">Country*</label>
+            <select  formControlName="country" class="form-control" name="" id="">
+                <option disabled value="" selected>
+                    Select Country
+                </option>
+                <option *ngFor="let country of countries" [value]="country" value="{{country}}">
+                    {{country}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group mt-2">
+            <label class="form-label" for="">DOB*</label>
+            <input class="form-control" formControlName="dob" type="date" placeholder="Enter Password">
+        </div>
+        <div class="form-group mt-2">
+            <input class="form-check-input" formControlName="terms" type="checkbox"> I agree to all the terms & conditions**
+        </div>
+
+        <div class="mt-4">
+            <button class="btn btn-success" [disabled]="!registrationForm.valid" (click)="senddata()">
+                Register
+            </button>
+        </div>
+    </div>
+</div>

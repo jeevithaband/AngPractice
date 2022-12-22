@@ -1,0 +1,24 @@
+<p>reactiveform works!</p>
+<div class="container">
+    <div class="row">
+        <div>
+            <div [formGroup]="RegistrationForm">
+                <label for="email" class="form-label">Enter Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Enter email">
+                
+                <label for="number" class="form-label">Enter Phone number</label>
+                <input type="text" class="form-control" formControlName="phone" placeholder="Enter number">
+                
+                <div formGroupName ="address">
+                <label for="address" class="form-label">Enter Address</label>
+                <label for="state" class="form-label">Enter state</label>
+                <input type="text" class="form-control" formControlName="state" placeholder="Enter state">
+                <label for="zip" class="form-label">Enter zip</label>
+                <input type="text" class="form-control" formControlName="zip" placeholder="Enter zip">               
+                </div>
+                <button class="btn btn-primary" (click)="sendData()">submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{RegistrationForm?.email}}

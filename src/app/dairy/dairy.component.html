@@ -1,0 +1,23 @@
+<div class="container">
+    <label for="" class="form-label"></label>
+    <input type="text" placeholder="enter text" class="form-control" [(ngModel)]="inputData">
+    <button class="btn btn-primary float-end mt-3" (click)="addItem()">Add</button>
+    <table class="table table-striped">
+      <thead>
+       <tr>
+        <th>title</th>
+        <th>status</th>
+       </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dairy of dairyData">
+            <td>
+                {{dairy.title}}
+            </td>
+            <td>
+                {{dairy.status}}
+            </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

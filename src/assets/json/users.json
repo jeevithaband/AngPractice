@@ -1,0 +1,22 @@
+{
+    "array" :[
+        {
+           "name" : "Jeevitha" ,
+           "designation" : "Engineer",
+           "location" : "vizag",
+           "emp id" : "890789"
+        },
+        {
+            "name" : "rajesh" ,
+            "designation" : "Engineer2",
+            "location" : "vizag",
+            "emp id" : "890786"
+         },
+         {
+            "name" : "sreeram" ,
+            "designation" : "Engineer3",
+            "location" : "vizag",
+            "emp id" : "890784"
+         }
+    ]
+}

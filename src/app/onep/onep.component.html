@@ -1,0 +1,5 @@
+<div>
+    {{names?.name}}
+</div>
+{{names | json}}
+<app-two [ParentTochild]="text" (fromChild)="message($event)"></app-two>
